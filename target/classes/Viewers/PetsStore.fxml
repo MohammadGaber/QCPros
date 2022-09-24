@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PetStoreController">
+    <tabs>
+        <Tab text="Pets Page">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <TabPane prefHeight="372.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+                            <tabs>
+                                <Tab text="Pets Store">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="294.0" prefWidth="200.0" style="-fx-background-color: grey;">
+                                            <children>
+                                                <Button layoutY="14.0" mnemonicParsing="false" onAction="#listAllPetsOnPetStore" text="Show all pets " />
+                                                <TextArea fx:id="petsTextArea" layoutX="100.0" layoutY="2.0" prefHeight="301.0" prefWidth="254.0" promptText="Pets Store" />
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Pet Finder">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="343.0" prefWidth="582.0" style="-fx-background-color: grey;">
+                                            <children>
+                                                <TextField fx:id="statusOrIDInput" layoutX="214.0" layoutY="25.0" promptText="Enter Pet's ID or Status " />
+                                                <Button layoutX="241.0" layoutY="76.0" mnemonicParsing="false" onAction="#findPet" prefHeight="25.0" prefWidth="95.0" text="Find Pet" />
+                                                <TextArea fx:id="findByIDOrStatusArea" layoutX="120.0" layoutY="113.0" prefHeight="200.0" prefWidth="360.0" />
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                            </tabs>
+                        </TabPane>
+                    </children></AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Add New Pet">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: grey;">
+                    <children>
+                        <Button layoutX="237.0" layoutY="186.0" mnemonicParsing="false" onAction="#addNewPet" prefHeight="26.0" prefWidth="123.0" text="add new pet" />
+                        <TextField fx:id="petNameInput" alignment="TOP_LEFT" layoutX="224.0" layoutY="84.0" promptText="Enter Pet Name" />
+                        <TextField fx:id="petStatus" alignment="TOP_LEFT" layoutX="226.0" layoutY="127.0" prefHeight="25.0" prefWidth="148.0" promptText="Enter Pet status" />
+                        <TextField fx:id="newAddedPetID" alignment="TOP_LEFT" layoutX="224.0" layoutY="49.0" promptText="Enter Pet ID" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Update/Delete Pet">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <TabPane layoutX="3.0" prefHeight="357.0" prefWidth="591.0" tabClosingPolicy="UNAVAILABLE">
+                            <tabs>
+                                <Tab text="Update Pet's Details ">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: grey;">
+                                            <children>
+                                                <TextField fx:id="requiredPetIDInput" alignment="CENTER" layoutX="221.0" layoutY="21.0" promptText="Enter Required Pet's ID" />
+                                                <TextField fx:id="petNewNameInput" alignment="CENTER" layoutX="221.0" layoutY="58.0" promptText="Enter Pet's New Name" />
+                                                <TextField fx:id="petNewStatusInput" alignment="CENTER" layoutX="221.0" layoutY="98.0" promptText="Enter Pet's New Status" />
+                                                <Button layoutX="234.0" layoutY="158.0" mnemonicParsing="false" onAction="#updatePetDetails" text="Update Pet's Details" />
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Delete Pet">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: grey;">
+                                            <children>
+                                                <Button fx:id="deleteBTN" layoutX="236.0" layoutY="164.0" mnemonicParsing="false" onAction="#deletePetFromStore" prefHeight="26.0" prefWidth="90.0" text="Delete" />
+                                                <TextField fx:id="IdToBeDeletedInput" alignment="TOP_LEFT" layoutX="206.0" layoutY="116.0" promptText="Enter Pet ID" />
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                            </tabs>
+                        </TabPane>
+                    </children></AnchorPane>
+            </content>
+        </Tab>
+      <Tab text="Dashboard">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <PieChart fx:id="pieChart" layoutX="170.0" layoutY="42.0" prefHeight="288.0" prefWidth="404.0" />
+                  <Label fx:id="precentlable" layoutX="23.0" layoutY="34.0" prefHeight="17.0" prefWidth="100.0" text="Label" />
+                  <Button fx:id="showSummary" layoutX="14.0" layoutY="61.0" mnemonicParsing="false" onAction="#setShowSummary" text="Show Summary" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+    </tabs>
+</TabPane>
